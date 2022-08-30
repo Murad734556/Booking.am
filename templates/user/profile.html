@@ -1,0 +1,39 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+    {%include 'include/header.html'%}
+
+    <section class="hero-wrap"  style="background-image:url({% static 'assets/images/space.jpg' %})">
+        <div class="overlay"></div>
+            <div class="container">
+                <div class="row no-gutters slider-text align-items-center justify-content-center">
+                    <div class="col-lg-10 text-center">
+                <span class="subheading"> Наслаждайтесь своим отдыхом с роскошным опытом!</span>
+                <h1 class="mb-4"> <small>@{{user.username}}</small></h1>
+                <p><a href="{% url 'profile_update' user.id %}" class="btn btn-primary p-4 py-3">Редактировать<span class="ion-ios-arrow-round-forward"></span></a> 
+                <a href="{% url 'profile_delete' user.id %}" class="btn btn-white btn-outline-white p-4 py-3">Удалить <span class="ion-ios-arrow-round-forward"></span></a></p>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <img src="{{ user.profile_image }}" class="rounded float-left" alt="#">
+    <div class="tab-content my-account-tab mt-6"  id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-dashboard">
+            <div class="my-account-dashboard account-wrapper">
+                <div class="welcome-dashboard" style="margin-left:220px ;">
+                    <h2><p>Имя пользователя: {{ user.username }}<p></h2>
+                    <h2><p>Имя: {{ user.last_name }}</p></h2>
+                    <h2><p>Фамилия: {{ user.first_name }}</p></h2>
+                    <h2><p>Почта: {{ user.email }}</p></h2>
+                    <h2><p>Телефонный номер: {{ user.phone }}</p> </h2>  
+                </div>
+                
+            </div>
+        </div>
+
+
+
+{%include 'include/footer.html'%}
+{%endblock%}

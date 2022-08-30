@@ -1,0 +1,68 @@
+{%extends 'homepage.html'%}
+{%load static%} 
+{%block content%}
+{%include 'include/header.html'%}
+
+<section class="hero-wrap hero-wrap-2" style="background-image:url({% static 'assets/images/xbg_3.jpg.pagespeed.ic.0AiuSxYrJD.jpg' %})">
+<div class="overlay"></div>
+<div class="container">
+<div class="row no-gutters slider-text align-items-center justify-content-center">
+<div class="col-md-9 pt-5 text-center">
+<p class="breadcrumbs"><span class="me-2"><a href="index.html">Если вы зарегистрированный пользователь тогда <i class="fa fa-chevron-right"></i></a></span> 
+<h1 class="mb-0 bread">Войдите</h1>
+</div>
+</div>
+</div>
+</section>
+
+<div class="login-register-wrapper">
+
+    <h4 class="title">Вход в свой аккаунт</h4>
+    <p>У вас уже есть аккаунт? <a href="login.html">Войдите вместо этого!</a></p>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="single-form">
+            <label class="form-label">Имя</label>
+            <input type="text" name="last_name" class="form-control">
+        </div>
+        <div class="single-form">
+            <label class="form-label">Фамилия</label>
+            <input type="text" name="first_name" class="form-control">
+        </div>
+        <div class="single-form">
+            <label class="form-label">Почта*</label>
+            <input type="text" name="email" class="form-control">
+        </div>
+        <div class="single-form">
+            <label class="form-label">Имя пользователя*</label>
+            <input type="text" name="username" class="form-control">
+        </div>
+        <div class="single-form">
+            <label class="form-label">Номер телефона</label>
+            <input type="text" name="phone" class="form-control">
+        </div>
+
+        <div class="single-form">
+            <label class="form-label">Пароль</label>
+            <input type="password" name="password1" class="form-control">
+        </div>
+
+        <div class="single-form">
+            <label class="form-label">Потвердите пароль</label>
+            <input type="password" name = "password2" class="form-control">
+        </div>
+        <div class="single-form">
+            <label for="img">Фото пользователя</label>
+            <input type="file" class="form-control" id="img" name="profile_image" accept="image/*">
+        </div>
+
+
+        <div class="single-form">
+            <button class="btn btn-primary">Потвердить</button>
+        </div>
+    </form>
+</div>
+
+{% include 'include/footer.html'%}
+{%endblock%}

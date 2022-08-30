@@ -13,8 +13,17 @@
             <li class="nav-item"><a class="nav-link" href="rooms.html">Категории</a></li>
             <li class="nav-item"><a class="nav-link" href="resto-bar.html">Страны</a></li>
             <li class="nav-item"><a class="nav-link" href="blog.html">Отели</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Связь</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html" style="margin-right: 70px;">Связь</a></li>
+            {% if user.is_authenticated%}
+                
+            <li class="nav-item"><a class="nav-link" href="{% url 'profile' user.id %}">{{user.username}}</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Выйти</a></li>
+
+            {%else%}
             <li class="nav-item"><a class="nav-link" href="{%url 'user_login'%}">Войти</a></li>
+            <li class="nav-item"><a class="nav-link" href="{%url 'register'%}">Зарегистриваться</a></li>
+            {%endif%}
             </ul>
         </div>
     </div>

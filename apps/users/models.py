@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -6,7 +7,7 @@ class User(AbstractUser):
     username = models.CharField(max_length=150, unique=True)
     phone= models.CharField(max_length=100)
     email= models.EmailField(unique=True)
-    profile_image= models.ImageField(upload_to= "profile_image/")
+    profile_image= models.ImageField(upload_to= "profile_image/", default="profile_image/default.jpg")
     
     
     def __str__(self):
