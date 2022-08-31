@@ -9,3 +9,10 @@ def index(request):
         'setting': setting,
     }
     return render(request, 'index.html', context)
+
+def about(request):
+    setting = Setting.objects.latest('id')
+    context={
+        'setting': setting,
+    }
+    return render(request, 'about.html', context)

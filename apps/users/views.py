@@ -66,7 +66,7 @@ def profile_update(request, id):
         last_name = request.POST.get('last_name')
         username = request.POST.get('username')
         email = request.POST.get('email')
-        profile_image = request.POST.get('profile_image')
+        profile_image = request.FILES.get('profile_image')
         phone = request.POST.get('phone')
         user = User.objects.get(id = id)
         user.first_name = first_name
