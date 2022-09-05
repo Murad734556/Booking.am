@@ -7,7 +7,9 @@ class Country(models.Model):
     title = models.CharField(max_length=255,verbose_name='Наименование')
     description = models.TextField(verbose_name='Описание',blank=True, null=True)
     slug = models.SlugField(blank=True, null = True, unique = True, verbose_name="Автогенерация URL")
-    image = models.ImageField(upload_to='country_image',verbose_name='Фото страны')
+    country_image = models.ImageField(upload_to='country_image',verbose_name='Фото страны')
+    
+    
 
     def __str__(self):
         return f"{self.title}"
@@ -15,11 +17,11 @@ class Country(models.Model):
     class Meta:
         verbose_name = 'Страна'
         verbose_name_plural = 'Страны'
-        ordering = ('-id',)
+        
 
 
 class CountryImage(models.Model):
-    post= models.ForeignKey(Country, on_delete=models.CASCADE, related_name="image_post")
+    country= models.ForeignKey(Country, on_delete=models.CASCADE, related_name="image_post")
     image= models.ImageField(upload_to= "second_post_image/")
 
     class Meta:

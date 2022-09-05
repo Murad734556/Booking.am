@@ -6,7 +6,25 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 Copyright (c) 2015 Daniel Eden
 */
-
+.bg-dark{
+  background-color: #fff;
+}
+.inner123{
+  display: flex;
+  margin: 15px 0;
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.w-50{
+  width: 700px !important;
+}
+p{
+  margin: 0 5px;
+  color: #000;
+  max-width: 600px;
+}
 @-webkit-keyframes bounce {
   from, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -3842,7 +3860,9 @@ textarea.form-control {
   color: #212529; }
 
 .carousel {
-  position: relative; }
+  position: relative; 
+  background-color: #000;
+}
 
 .carousel.pointer-event {
   -ms-touch-action: pan-y;
@@ -3851,7 +3871,6 @@ textarea.form-control {
 .carousel-item {
   position: relative;
   display: none;
-  float: left;
   width: 100%;
   margin-right: -100%;
   -webkit-backface-visibility: hidden;
@@ -3897,7 +3916,6 @@ textarea.form-control {
 } */
 
 .carousel-indicators {
-  position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
@@ -4218,12 +4236,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5,
   font-family: "Old Standard TT", Arial, sans-serif; }
 
 .ftco-navbar-light {
-  background: transparent !important;
-  position: absolute;
-  top: 20px;
+  background-color: #000;
   left: 0;
   right: 0;
-  z-index: 3;
   padding: 0; }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
