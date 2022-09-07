@@ -11,7 +11,7 @@
             <span class="subheading"> Наслаждайтесь своим отдыхом с роскошным опытом!</span>
             <h1 class="mb-4"> <small>Мы подберем для вас подходящее</small></h1>
             <p><a href="index.html#" class="btn btn-primary p-4 py-3">Найти <span class="ion-ios-arrow-round-forward"></span></a> 
-            <a href="index.html#" class="btn btn-white btn-outline-white p-4 py-3">Узнать больше <span class="ion-ios-arrow-round-forward"></span></a></p>
+            <a href="{% url 'about' %}" class="btn btn-white btn-outline-white p-4 py-3">Узнать больше <span class="ion-ios-arrow-round-forward"></span></a></p>
                 </div>
             </div>
     </div>
@@ -157,7 +157,7 @@
                         <div class="text p-5 text-center">
                         <h3><a href="{% url 'country_detail' country.id  %}">{{country.title}}</a></h3>
                         <p>{{country.description}}.</p>
-                        <p class="mb-0 mt-2"><span class="me-3 price">$450 <small>/ night</small></span><a href="index.html#" class="btn-custom">Book Now</a></p>
+                        <p class="mb-0 mt-2"><span class="me-3 price">От 0,30$<small>/ночь </small></span><a href="https://www.aviasales.kg/" class="btn-custom">Book Now</a></p>
                     </div>
                 </div>
             </div>
@@ -237,12 +237,12 @@
 <div class="row" data-aos="fade-up" data-aos-duration="1000">
 <div class="col-md-8 d-flex align-items-center">
 <div>
-<span class="subheading">Find Best Hotel For Leaving</span>
-<h1 class="mb-md-0 mb-4">Find the Best Hotel in Your Next Vacation</h1>
+<span class="subheading">Найти хороший отель для жилья</span>
+<h1 class="mb-md-0 mb-4"> Найдите самый лучший отель. Мы вам поможем!</h1>
 </div>
 </div>
 <div class="col-md-4 d-flex align-items-center">
-<p class="mb-0"><a href="index.html#" class="btn btn-primary py-md-4 py-3 px-md-5 px-4">Book Now</a></p>
+<p class="mb-0"><a href="index.html#" class="btn btn-primary py-md-4 py-3 px-md-5 px-4">Найти</a></p>
 </div>
 </div>
 </div>
@@ -255,8 +255,8 @@
 <div class="container-fluid">
 <div class="row justify-content-center pb-4">
 <div class="col-md-7 text-center heading-section" data-aos="fade-up" data-aos-duration="1000">
-<span class="subheading">Resto &amp; Bar</span>
-<h2 class="mb-3">Restaurant &amp; Bar</h2>
+<span class="subheading">Рестораны &amp; Бары</span>
+<h2 class="mb-3">Рестораны &amp; Бары</h2>
 </div>
 </div>
 <div class="row g-md-5">
@@ -353,7 +353,7 @@
 <div class="row justify-content-center pb-4">
 <div class="col-md-7 text-center heading-section" data-aos="fade-up" data-aos-duration="1000">
 <span class="subheading">Отели</span>
-<h2 class="mb-3">Отели и рестораны</h2>
+<h2 class="mb-3">Отели и жилье</h2>
 </div>
 </div>
     {%for hotel in hotels%}

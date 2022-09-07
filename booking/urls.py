@@ -23,9 +23,10 @@ from django.contrib.auth.views import LogoutView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.settings.urls')),
-     path('logout/', LogoutView.as_view(next_page = 'index'), name = "logout"),
+    path('logout/', LogoutView.as_view(next_page = 'index'), name = "logout"),
     path('', include('apps.users.urls')),
     path('', include('apps.countries.urls')),
+    path('', include('apps.places.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
