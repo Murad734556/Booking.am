@@ -1,0 +1,49 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+{%include 'include/header.html'%}
+
+<section class="hero-wrap" style="background-image:url({% static 'assets/images/xbg_1.jpg.pagespeed.ic.oRcg33KJB5.jpg' %})">
+    <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-lg-10 text-center">
+            <span class="subheading">Арендуйте жилье прямо здесь и сейчас!</span>
+            <h1 class="mb-4"> <small>Найти подходящее</small></h1>
+            <p><a href="{% url 'index'%}" class="btn btn-primary p-4 py-3  " style="margin-left: 370px;">Вернуться на главную <span class="ion-ios-arrow-round-forward"></span></a> 
+            
+                </div>
+            </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+
+        {%for place in places%}
+<div class="row">
+<div class="col-md-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+<div class="carousel-testimony">
+<div class="item">
+<div class="testimony-wrap">
+<div class="text">
+<div class="d-flex align-items-center mb-4">
+<div class="user-img" style="background-image:url({{place.image.url}})">
+<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+</div>
+<div class="ps-3 tx">
+<p class="name">{{place.title}}</p>
+<span class="position">{{place.country}}</span>
+</div>
+</div>
+<p class="mb-4 msg">{{place.description}}.</p>
+</div>
+</div>
+</div>
+{%endfor%}
+    </div>
+</section>
+
+
+
+{%include 'include/footer.html'%}
+{%endblock%}

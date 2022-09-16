@@ -1,7 +1,6 @@
 from django.urls import path 
-from apps.places.views import places
+from apps.places.views import place_detail
 
 urlpatterns = [
-    path('places/all', places, name = "places"),
-   
+    path('place/<int:id>', place_detail, name="place_detail")
 ]

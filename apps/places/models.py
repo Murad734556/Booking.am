@@ -1,6 +1,5 @@
 from django.db import models
 from apps.countries.models import Country
-from apps.hotels.models import Hotel
 from django.db.models.signals import pre_save
 from apps.hotels.slug_generator import unique_slug_generators
 # Create your models here.
@@ -10,7 +9,6 @@ class Places(models.Model):
     title= models.CharField(max_length=255, verbose_name="Название места")
     image= models.ImageField(upload_to="place_image", verbose_name="Фото места")
     description= models.TextField(verbose_name="Описание", blank=True, null=True)
-    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name="Hotels")
     slug  = models.SlugField(blank=True, null = True, unique = True, verbose_name="Автогенерация URL")
 
 
@@ -36,4 +34,4 @@ def slag_pre_save_receiver(sender, instance, *args, **kwargs):
         instance.slug = unique_slug_generators(instance)
 
 
-pre_save.connect(slag_pre_save_receiver, sender=Hotel)
+pre_save.connect(slag_pre_save_receiver, sender=Places)

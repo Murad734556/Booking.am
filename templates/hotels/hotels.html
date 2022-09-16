@@ -1,0 +1,51 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{% block content%}
+{%include 'include/header.html'%}
+
+<section class="ftco-section testimony-section bg-light">
+    <div class="container-xl">
+    <div class="row justify-content-center pb-4">
+    <div class="col-md-7 text-center heading-section" data-aos="fade-up" data-aos-duration="1000">
+    <span class="subheading">Отели</span>
+    <h2 class="mb-3">Отели и жилье</h2>
+    </div>
+    </div>
+        {%for hotel in places.hotels_in_place.all %}
+    <div class="row">
+    <div class="col-md-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+    <div class="carousel-testimony">
+    <div class="item">
+    <div class="testimony-wrap">
+    <div class="text">
+    <div class="d-flex align-items-center mb-4">
+    <div class="user-img" style="background-image:url({{hotel.image.url}})">
+    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+    </div>
+    <div class="ps-3 tx">
+    <a href="{%url 'hotel_detail' hotel.id %}"><p class="name"> {{hotel.title}}</p></a>
+    <span class="position">{{hotel.country}}</span>
+    </div>
+    </div>
+    <p class="mb-4 msg">{{hotel.description}}.</p>
+    </div>
+    </div>
+    </div>
+    {%endfor%}
+    
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+
+
+
+
+
+
+
+
+{%include 'include/footer.html'%}
+{%endblock%}

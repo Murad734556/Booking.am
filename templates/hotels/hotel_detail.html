@@ -1,1 +1,36 @@
-<h2>hello</h2>
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+{%include 'include/header.html'%}
+
+
+<section class="ftco-section testimony-section bg-light">
+  <div class="container-xl">
+  <div class="row justify-content-center pb-4">
+  <div class="col-md-7 text-center heading-section" data-aos="fade-up" data-aos-duration="1000">
+  <span class="subheading">Отели</span>
+  <h2 class="mb-3">{{hotels.hotel_type}}:  {{hotels.title}}</h2>
+  </section>
+    
+    <img src="{{ hotels.image.url  }}" style = "height: 500px; margin-left: 200px;" class="rounded float-left" alt="#">
+    <div class="tab-content my-account-tab mt-6"  id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-dashboard">
+            <div class="my-account-dashboard account-wrapper">
+                <div class="welcome-dashboard" style="margin-left:220px ;">
+                    <h2><p>Название: {{ hotels.title }}<p></h2>
+                      <h2><p>Тип: {{ hotels.hotel_type }}<p></h2>
+                      <h2><p>Об Отеле:{{ hotels.description }}</p></h2>                    
+                      <h2><p>Место: {{ hotels.place }}</p></h2>                    
+                    <h2><p>Есть ресторан : {{ hotels.restaurant }}</p></h2>
+                    <h2><p>Телефонный номер: {{ hotels.phone }}</p> </h2>
+                    <h2><p>Начальная аренда комнаты: {{ hotels.price }}<p></h2>  
+                    <p><a href="tel: {{ hotels.phone }}" class="btn btn-primary py-3 px-4">Позвонить</p></a>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+{% include 'include/footer.html' %}
+{% endblock %}

@@ -19,18 +19,18 @@
         
         <div class="polo">
           <h3><p>{{place.title}}</p></h3>
-        <p>{{place.description}}</p></div>
+        <p>{{place.description}}</p>
+        <div class="loro">
+          <p><a href="{% url 'hotels' place.id %}" class="btn btn-primary py-3 px-4">Посмотреть отели </a></p>
+        </div>
       </div>
-      <!-- <div class="inner123">
-        <img class="d-block w-50" src="{{countries.country_image.url}}" alt="Second slide">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quae, non tempore officia maiores at debitis dolorum magnam doloribus amet, iure deserunt voluptatibus nulla est qui error repellendus quod id consectetur veniam maxime ipsam, cupiditate quis similique. Cumque at voluptas quibusdam, neque beatae reprehenderit. Unde voluptas voluptatibus dolorem sit qui.</p>
+        
       </div>
-      <div class="inner123">
-        <img class="d-block w-50" src="{{countries.country_image.url}}" alt="Third slide">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quae, non tempore officia maiores at debitis dolorum magnam doloribus amet, iure deserunt voluptatibus nulla est qui error repellendus quod id consectetur veniam maxime ipsam, cupiditate quis similique. Cumque at voluptas quibusdam, neque beatae reprehenderit. Unde voluptas voluptatibus dolorem sit qui.</p>
-      </div> -->
+      
+     
     </div>
   </div>
+
   {%endfor%}
       
      
@@ -49,40 +49,6 @@
 
 
 
-    <section class="ftco-section testimony-section bg-light">
-      <div class="container-xl">
-      <div class="row justify-content-center pb-4">
-      <div class="col-md-7 text-center heading-section" data-aos="fade-up" data-aos-duration="1000">
-      <span class="subheading">Отели</span>
-      <h2 class="mb-3">Отели</h2>
-      </div>
-      </div>
-      {% for hotel in countries.hotel_from_country.all %}
-      
-      <div class="row">
-      <div class="col-md-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-      <div class="carousel-testimony">
-      <div class="item">
-      <div class="testimony-wrap">
-      <div class="text">
-      <div class="d-flex align-items-center mb-4">
-      <div class="user-img" style="background-image:url({{ hotel.image.url }})">
-      <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-      </div>
-      <div class="ps-3 tx">
-      <p class="name" href="{% url 'index' %}" >{{hotel.title}}</p>
-      <span class="position">{{hotel.country}}</span>
-      </div>
-      </div>
-      <p class="mb-4 msg">{{hotel.description}}.</p>
-      <p class="mb-4 msg"> Ресторан: {{hotel.restaurant}}</p>
-      <p class="mb-4 msg">Начальная цена арендуемой комнаты  : {{hotel.price}}</p>
-      </div>
-      </div>
-      </div>
-      
-   {%endfor%}
-    </section>
 
 
 

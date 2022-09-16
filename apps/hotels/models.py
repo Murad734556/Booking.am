@@ -1,13 +1,13 @@
 from django.db import models
-from apps.countries.models import Country
+from apps.places.models import Places
 from django.db.models.signals import pre_save
 from apps.hotels.slug_generator import unique_slug_generators
 # Create your models here.
 
 
-class Hotel(models.Model):
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name="hotel_from_country") 
+class Hotel(models.Model): 
     title= models.CharField(max_length=255, verbose_name="Название отеля")
+    place = models.ForeignKey(Places, on_delete=models.CASCADE, related_name="hotels_in_place")
     description= models.TextField(verbose_name="Описание", blank=True, null=True)
     image= models.ImageField(upload_to="hotel_image", verbose_name="Фото отеля")
     CHOICE_CURRENCY =(
